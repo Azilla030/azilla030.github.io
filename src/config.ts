@@ -1,10 +1,9 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "Captain Awesome";
+export const SITE_TITLE = "Höher Kleiner Spiel";
 export const SITE_DESCRIPTION =
-  "Welcome to my blog! I write about modern web development.";
-export const TWITTER_HANDLE = "@yourtwitterhandle";
+  "Das ist die Webseite vom Höher Kleiner Spiel";
 export const MY_NAME = "Captain Awesome";
 
 // setup in astro.config.mjs

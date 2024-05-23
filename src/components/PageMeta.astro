@@ -4,7 +4,6 @@ import {
   SITE_TITLE,
   SITE_DESCRIPTION,
   SITE_URL,
-  TWITTER_HANDLE,
 } from "../config";
 
 export interface Props {
@@ -14,16 +13,14 @@ export interface Props {
 
 const { title, description } = Astro.props;
 
-const { meta, og, twitter } = getPageMeta({
+const { meta, og } = getPageMeta({
   title: title || SITE_TITLE,
   description: description || SITE_DESCRIPTION,
   baseUrl: SITE_URL,
   ogImageAbsoluteUrl: `${SITE_URL}/images/og.png`,
-  ogImageAltText: "My fancy website",
+  ogImageAltText: "Höher Kleiner Spiel",
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  siteOwnerTwitterHandle: TWITTER_HANDLE,
-  contentAuthorTwitterHandle: TWITTER_HANDLE,
 });
 ---
 
@@ -42,24 +39,3 @@ const { meta, og, twitter } = getPageMeta({
 {og.imageWidth && <meta property="og:image:width" content={og.imageWidth} />}
 {og.imageHeight && <meta property="og:image:height" content={og.imageHeight} />}
 
-<!-- Twitter -->
-{twitter.title && <meta property="twitter:title" content={twitter.title} />}
-{
-  twitter.description && (
-    <meta property="twitter:description" content={twitter.description} />
-  )
-}
-{twitter.site && <meta property="twitter:site" content={twitter.site} />}
-{
-  twitter.creator && (
-    <meta property="twitter:creator" content={twitter.creator} />
-  )
-}
-<meta property="twitter:card" content="summary_large_image" />
-{twitter.image && <meta property="twitter:image" content={twitter.image} />}
-{
-  twitter.imageAlt && (
-    <meta property="twitter:image:alt" content={twitter.imageAlt} />
-  )
-}
-<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
