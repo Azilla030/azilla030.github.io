@@ -6,10 +6,33 @@ import HeaderLink from "./HeaderLink.astro";
     <div class="flex flex-col items-start md:items-center">
         <ul class="unset flex gap-4 [&>li]:p-0">
           <li>
-            <HeaderLink href="/privacy-policy" class="hover:text-gray-400">Privacy Policy</HeaderLink>
+            <HeaderLink href="/privacy-policy" class="">Privacy Policy</HeaderLink>
           </li>
         </ul>
     </div>
     </div>
   </div>
 </footer>
+
+<style>
+  footer {
+    background-color: rgb(var(--color-bg-body));
+    color: rgb(var(--color-text-body));
+  }
+
+  footer a {
+    color: rgb(var(--color-text-link));
+  }
+
+  footer a:hover {
+    color: rgb(var(--color-text-link));
+  }
+
+  footer .border-t {
+    border-color: rgb(var(--color-border-code));
+  }
+
+  footer button {
+    border-color: rgb(var(--color-border-code));
+  }
+</style>
