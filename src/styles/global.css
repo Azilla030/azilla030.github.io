@@ -9,7 +9,23 @@
     https://tailwindcss.com/docs/customizing-colors#using-css-variables 
 */
 @layer base {
+    
 
+    .light-mode {
+        display: block;
+      }
+      
+      .dark-mode {
+        display: none;
+      }
+      
+      .dark .light-mode {
+        display: none;
+      }
+      
+      .dark .dark-mode {
+        display: block;
+      }
     
     /* light theme */
     .theme-sleek {

@@ -1,5 +1,57 @@
+<script is:inline>
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      const themeColorMetaTag = document.head.querySelector('meta[name="theme-color"]');
+      const appStoreLink = document.getElementById("app-store-link");
 
-<div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
+      function setDarkMode() {
+        document.documentElement.classList.add("dark");
+        if (themeColorMetaTag) {
+          themeColorMetaTag.content = "#0e141b";
+        }
+      }
+
+      function setLightMode() {
+        document.documentElement.classList.remove("dark");
+        if (themeColorMetaTag) {
+          themeColorMetaTag.content = "#ffffff";
+        }
+      }
+
+      if (!storageTheme && isSystemColorSchemeDark) {
+        setDarkMode();
+      } else if (storageTheme === "dark") {
+        setDarkMode();
+      } else {
+        setLightMode();
+      }
+
+      // Add event listener to toggle button
+      const toggleButton = document.getElementById("mode-toggle");
+      toggleButton.addEventListener("click", () => {
+        if (document.documentElement.classList.contains("dark")) {
+          setLightMode();
+          sessionStorage.setItem("theme", "light");
+        } else {
+          setDarkMode();
+          sessionStorage.setItem("theme", "dark");
+        }
+      });
+    }
+  })();
+</script> 
+ 
+ <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
   <img src="/images/iPhone15-Pro-Mockup-Home.png" class="w-64 md:w-80 lg:w-96" alt="iPhone 15 Pro Mockup">
   <img src="/images/iPhone15-Mockup.png" class="w-64 md:w-80 lg:w-96" alt="Spiel Screenshot">
+</div>
+<div>
+  <div id="download" class="py-10 text-center my-10">
+    <a id="app-store-link" href="#">
+      <img id="light-mode-image" src="/images/Download_on_the_App_Store_DE_wht.svg" alt="Light Mode Icon" class="w-40 mx-auto pb-5 light-mode" />
+      <img id="dark-mode-image" src="/images/Download_on_the_App_Store_DE_blk.svg" alt="Dark Mode Icon" class="w-40 mx-auto pb-5 dark-mode" />
+    </a>
+  </div>
 </div>
