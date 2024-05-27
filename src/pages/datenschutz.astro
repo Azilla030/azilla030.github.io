@@ -1,0 +1,38 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageMeta from "../components/PageMeta.astro";
+import { SITE_TITLE } from "../config";
+
+
+---
+
+<PageLayout>
+  <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
+  <section slot="main">
+    <h1 class="text-3xl font-bold mb-6">Datenschutzerklärung</h1>
+    <p class="mb-4">Wir freuen uns über Ihr Interesse an unserer App. Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.</p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">1. Erhebung und Verarbeitung von Daten</h2>
+    <p class="mb-4">Unsere App erhebt und verarbeitet personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen. Dies kann z.B. durch das Eingeben von Daten in unsere App oder durch die Nutzung bestimmter Funktionen geschehen.</p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">2. Nutzung und Weitergabe personenbezogener Daten</h2>
+    <p class="mb-4">Ihre personenbezogenen Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Im Rahmen der Nutzung unserer App kann es jedoch notwendig sein, bestimmte Daten, wie z.B. Ihre Spielergebnisse, zu verarbeiten und auf unseren Server hochzuladen, um eine globale Bestenliste zu erstellen. Dabei werden folgende Daten erfasst und verarbeitet:</p>
+    <ul class="list-disc list-inside mb-4">
+        <li>Benutzername</li>
+        <li>Spielergebnis</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">3. Einwilligung</h2>
+    <p class="mb-4">Mit der Nutzung unserer App und der Teilnahme an der globalen Bestenliste willigen Sie in die Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten in dem beschriebenen Umfang ein. Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">4. Datensicherheit</h2>
+    <p class="mb-4">Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre durch uns verwalteten Daten gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen.</p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">5. Ihre Rechte</h2>
+    <p class="mb-4">Sie haben das Recht auf Auskunft über die von uns zu Ihrer Person gespeicherten Daten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:</p>
+    <p class="mb-4 font-semibold"><a href="mailto:hoeher-kleiner-spiel@gmail.com">hoeher-kleiner-spiel@gmail.com</a></p>
+
+    <h2 class="text-2xl font-semibold mt-6 mb-4">6. Änderungen der Datenschutzerklärung</h2>
+    <p class="mb-4">Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+  </section>
+</PageLayout>
