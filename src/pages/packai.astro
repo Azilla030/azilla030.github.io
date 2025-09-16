@@ -57,19 +57,9 @@ header {
 .logo-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="25" width="60" height="45" rx="8" ry="8" fill="white" stroke="none"/><rect x="25" y="30" width="50" height="15" rx="3" ry="3" fill="%238b5cf6" stroke="none"/><rect x="25" y="50" width="50" height="15" rx="3" ry="3" fill="%238b5cf6" stroke="none"/><path d="M35 15 L45 15 L50 25 L30 25 Z" fill="white" stroke="none"/><path d="M55 15 L65 15 L70 25 L50 25 Z" fill="white" stroke="none"/></svg>');
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: cover;
 }
 
 .logo h1 {
@@ -468,12 +458,12 @@ footer {
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon"></div>
+                    <img src="/images/App-Icon-PackAI.png" alt="PackAI Logo" class="logo-icon" />
                     <h1>PackAI</h1>
                 </div>
                 <nav class="nav">
-                    <a href="#features" data-i18n="nav.features">Features</a>
-                    <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
+                    <a href="#features" data-i18n="nav.features">Funktionen</a>
+                    <a href="#privacy" data-i18n="nav.privacy">Privatsphäre</a>
                     <a href="mailto:support@reyescasa.games" data-i18n="nav.support">Support</a>
                     <div class="language-selector">
                         <select id="languageSelect">
@@ -489,7 +479,7 @@ footer {
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>On-Device Packing & Lists</h2>
+                <h2 data-i18n="hero.title">Lokale Packlisten & KI</h2>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Die intelligente Packlisten-App mit KI-Chatbot</p>
                 <p class="hero-description" data-i18n="hero.description">
                     Verwende Apple's VisionKit, um Gegenstände aus deinen Fotos zu extrahieren.
@@ -600,9 +590,6 @@ footer {
                 <a href="mailto:support@reyescasa.games" data-i18n="nav.support">Support</a>
                 <a href="#impressum" id="impressumLink">Impressum</a>
             </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer.copyright">&copy; 2025 Reyes Casa Games. Alle Rechte vorbehalten.</p>
-            </div>
         </div>
     </footer>
 
@@ -626,9 +613,10 @@ footer {
     <script>
         const translations = {
             de: {
-                "nav.features": "Features",
-                "nav.privacy": "Privacy",
+                "nav.features": "Funktionen",
+                "nav.privacy": "Privatsphäre",
                 "nav.support": "Support",
+                "hero.title": "Lokale Packlisten & KI",
                 "hero.subtitle": "Die intelligente Packlisten-App mit KI-Chatbot",
                 "hero.description": "Verwende Apple's VisionKit, um Gegenstände aus deinen Fotos zu extrahieren. Organisiere sie in Packlisten und plane Reisen mit Leichtigkeit.<br><strong>NEU:</strong> Intelligenter Chatbot hilft dir bei der Auswahl der perfekten Gegenstände für jede Reise.<br>Alles läuft vollständig auf deinem Gerät — keine APIs, keine Datensammlung.",
                 "features.title": "Warum PackAI?",
@@ -658,13 +646,13 @@ footer {
                 "privacy.features.1.description": "Keine Pack-Daten-Sammlung",
                 "privacy.features.2.title": "On-Device",
                 "privacy.features.2.description": "Komplette Verarbeitung lokal",
-                "footer.copyright": "© 2025 Reyes Casa Games. Alle Rechte vorbehalten.",
                 "scroll": "Scroll"
             },
             en: {
                 "nav.features": "Features",
                 "nav.privacy": "Privacy",
                 "nav.support": "Support",
+                "hero.title": "On-Device Packing & Lists",
                 "hero.subtitle": "The smart packing list app with AI chatbot",
                 "hero.description": "Use Apple's VisionKit to extract items from your photos. Organize them into packing lists and plan trips with ease.<br><strong>NEW:</strong> Intelligent chatbot helps you choose the perfect items for every trip.<br>Everything runs entirely on your device — no APIs, zero data collection.",
                 "features.title": "Why PackAI?",
@@ -694,7 +682,6 @@ footer {
                 "privacy.features.1.description": "No pack data collection",
                 "privacy.features.2.title": "On-Device",
                 "privacy.features.2.description": "Complete local processing",
-                "footer.copyright": "© 2025 Reyes Casa Games. All rights reserved.",
                 "scroll": "Scroll"
             }
         };
