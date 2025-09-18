@@ -1,0 +1,177 @@
+---
+// src/pages/packai-privacy.astro
+export interface Props {
+    title?: string;
+}
+
+const { title = "PackAI - Privacy Policy" } = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="PackAI Privacy Policy - Learn how we protect your data with local, on-device processing." />
+</head>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.header .last-updated {
+    color: #666;
+    font-size: 1rem;
+}
+
+.content h2 {
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0 15px 0;
+    padding-top: 20px;
+}
+
+.content h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.content p {
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+.content ul {
+    margin: 15px 0 15px 20px;
+    padding-left: 0;
+}
+
+.content li {
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.content a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.content a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #764ba2;
+}
+
+.back-link::before {
+    content: "← ";
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .content h2 {
+        font-size: 1.3rem;
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <a href="/packai" class="back-link">Back to PackAI</a>
+
+        <div class="header">
+            <h1>PackAI Privacy Policy</h1>
+            <p class="last-updated">Last Updated: August 4, 2025</p>
+        </div>
+
+        <div class="content">
+            <p>This Privacy Policy describes how PackAI handles your information when you use our mobile application.</p>
+
+            <h2>INFORMATION WE COLLECT</h2>
+            <p>PackAI stores all your data locally on your device:</p>
+            <ul>
+                <li>Trip information (names, dates, destinations)</li>
+                <li>Packing lists and item details</li>
+                <li>Categories and locations you create</li>
+                <li>App preferences and settings</li>
+            </ul>
+
+            <h2>LOCATION DATA</h2>
+            <p>With your permission, PackAI may access your location to:</p>
+            <ul>
+                <li>Provide weather information for your destinations</li>
+                <li>Suggest nearby locations for trip planning</li>
+            </ul>
+            <p>Location data is processed locally and used only for weather services through Apple's WeatherKit. You can disable location access in your device settings at any time.</p>
+
+            <h2>DATA STORAGE</h2>
+            <p>All your trip data is stored locally on your device using Apple's SwiftData framework. We do not collect, store, or transmit your personal information to external servers.</p>
+
+            <h2>THIRD-PARTY SERVICES</h2>
+            <p>PackAI uses Apple's WeatherKit service to provide weather information. Weather data requests are handled in accordance with <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Apple's privacy policies</a>.</p>
+
+            <h2>YOUR RIGHTS</h2>
+            <p>Since all data is stored locally on your device, you have complete control over your information:</p>
+            <ul>
+                <li>Delete the app to remove all data</li>
+                <li>Manage location permissions in device settings</li>
+                <li>Export or backup your data as needed</li>
+            </ul>
+
+            <h2>CONTACT US</h2>
+            <p>If you have any questions about this Privacy Policy, please <a href="mailto:support@reyescasa.games">contact us</a> through the App's support channels.</p>
+        </div>
+    </div>
+</body>
+</html>

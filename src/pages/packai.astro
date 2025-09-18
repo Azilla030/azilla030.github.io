@@ -368,9 +368,11 @@ footer {
     background: white;
     padding: 40px;
     border-radius: 20px;
-    max-width: 500px;
+    max-width: 600px;
+    max-height: 80vh;
     margin: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow-y: auto;
 }
 
 .modal-header {
@@ -391,6 +393,38 @@ footer {
 .modal-body {
     color: #666;
     line-height: 1.6;
+}
+
+.modal-body h3 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+}
+
+.modal-body ul {
+    margin: 15px 0 15px 20px;
+    padding-left: 0;
+}
+
+.modal-body li {
+    margin-bottom: 8px;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+}
+
+.modal-body a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.modal-body a:hover {
+    color: #764ba2;
+    text-decoration: underline;
 }
 
 @keyframes fadeInBounce {
@@ -588,27 +622,60 @@ footer {
         <div class="container">
             <div class="footer-content">
                 <a href="mailto:support@reyescasa.games" data-i18n="nav.support">Support</a>
-                <a href="#impressum" id="impressumLink">Impressum</a>
+                <a href="/packai-privacy" data-i18n="footer.privacy">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- Impressum Modal -->
-    <div id="impressum-modal" class="modal">
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Impressum</h3>
-                <button class="modal-close" id="modalClose">&times;</button>
+                <h2 data-i18n="privacy.modal.title">PackAI Datenschutzerklärung</h2>
+                <button class="modal-close" id="closePrivacy">&times;</button>
             </div>
             <div class="modal-body">
-                <strong>Reyes Casa Games</strong><br>
-                c/o IP-Management #36237<br>
-                Ludwig-Erhard-Str. 18<br>
-                20459 Hamburg<br>
-                Deutschland
+                <p><strong data-i18n="privacy.modal.lastUpdated">Zuletzt aktualisiert: 4. August 2025</strong></p>
+
+                <p data-i18n="privacy.modal.intro">Diese Datenschutzerklärung beschreibt, wie PackAI Ihre Informationen behandelt, wenn Sie unsere mobile Anwendung nutzen.</p>
+
+                <h3 data-i18n="privacy.modal.infoCollect.title">INFORMATIONEN, DIE WIR SAMMELN</h3>
+                <p data-i18n="privacy.modal.infoCollect.description">PackAI speichert alle Ihre Daten lokal auf Ihrem Gerät:</p>
+                <ul>
+                    <li data-i18n="privacy.modal.infoCollect.item1">Reiseinformationen (Namen, Daten, Ziele)</li>
+                    <li data-i18n="privacy.modal.infoCollect.item2">Packlisten und Artikeldetails</li>
+                    <li data-i18n="privacy.modal.infoCollect.item3">Von Ihnen erstellte Kategorien und Orte</li>
+                    <li data-i18n="privacy.modal.infoCollect.item4">App-Einstellungen und Präferenzen</li>
+                </ul>
+
+                <h3 data-i18n="privacy.modal.location.title">STANDORTDATEN</h3>
+                <p data-i18n="privacy.modal.location.description">Mit Ihrer Erlaubnis kann PackAI auf Ihren Standort zugreifen, um:</p>
+                <ul>
+                    <li data-i18n="privacy.modal.location.item1">Wetterinformationen für Ihre Ziele bereitzustellen</li>
+                    <li data-i18n="privacy.modal.location.item2">Nahegelegene Orte für die Reiseplanung vorzuschlagen</li>
+                </ul>
+                <p data-i18n="privacy.modal.location.details">Standortdaten werden lokal verarbeitet und nur für Wetterdienste über Apple's WeatherKit verwendet. Sie können den Standortzugriff jederzeit in Ihren Geräteeinstellungen deaktivieren.</p>
+
+                <h3 data-i18n="privacy.modal.storage.title">DATENSPEICHERUNG</h3>
+                <p data-i18n="privacy.modal.storage.description">Alle Ihre Reisedaten werden lokal auf Ihrem Gerät mit Apple's SwiftData Framework gespeichert. Wir sammeln, speichern oder übertragen Ihre persönlichen Informationen nicht an externe Server.</p>
+
+                <h3 data-i18n="privacy.modal.thirdParty.title">DRITTANBIETER-DIENSTE</h3>
+                <p data-i18n="privacy.modal.thirdParty.description">PackAI verwendet Apple's WeatherKit-Service, um Wetterinformationen bereitzustellen. Wetteranfragen werden gemäß <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Apple's Datenschutzrichtlinien</a> behandelt.</p>
+
+                <h3 data-i18n="privacy.modal.rights.title">IHRE RECHTE</h3>
+                <p data-i18n="privacy.modal.rights.description">Da alle Daten lokal auf Ihrem Gerät gespeichert werden, haben Sie vollständige Kontrolle über Ihre Informationen:</p>
+                <ul>
+                    <li data-i18n="privacy.modal.rights.item1">App löschen, um alle Daten zu entfernen</li>
+                    <li data-i18n="privacy.modal.rights.item2">Standortberechtigungen in den Geräteeinstellungen verwalten</li>
+                    <li data-i18n="privacy.modal.rights.item3">Ihre Daten nach Bedarf exportieren oder sichern</li>
+                </ul>
+
+                <h3 data-i18n="privacy.modal.contact.title">KONTAKTIEREN SIE UNS</h3>
+                <p data-i18n="privacy.modal.contact.description">Wenn Sie Fragen zu dieser Datenschutzerklärung haben, <a href="mailto:support@reyescasa.games">kontaktieren Sie uns</a> bitte über die Support-Kanäle der App.</p>
             </div>
         </div>
     </div>
+
 
     <script>
         const translations = {
@@ -646,7 +713,33 @@ footer {
                 "privacy.features.1.description": "Keine Pack-Daten-Sammlung",
                 "privacy.features.2.title": "On-Device",
                 "privacy.features.2.description": "Komplette Verarbeitung lokal",
-                "scroll": "Scroll"
+                "scroll": "Scroll",
+                "footer.privacy": "Datenschutz",
+                "privacy.modal.title": "PackAI Datenschutzerklärung",
+                "privacy.modal.lastUpdated": "Zuletzt aktualisiert: 4. August 2025",
+                "privacy.modal.intro": "Diese Datenschutzerklärung beschreibt, wie PackAI Ihre Informationen behandelt, wenn Sie unsere mobile Anwendung nutzen.",
+                "privacy.modal.infoCollect.title": "INFORMATIONEN, DIE WIR SAMMELN",
+                "privacy.modal.infoCollect.description": "PackAI speichert alle Ihre Daten lokal auf Ihrem Gerät:",
+                "privacy.modal.infoCollect.item1": "Reiseinformationen (Namen, Daten, Ziele)",
+                "privacy.modal.infoCollect.item2": "Packlisten und Artikeldetails",
+                "privacy.modal.infoCollect.item3": "Von Ihnen erstellte Kategorien und Orte",
+                "privacy.modal.infoCollect.item4": "App-Einstellungen und Präferenzen",
+                "privacy.modal.location.title": "STANDORTDATEN",
+                "privacy.modal.location.description": "Mit Ihrer Erlaubnis kann PackAI auf Ihren Standort zugreifen, um:",
+                "privacy.modal.location.item1": "Wetterinformationen für Ihre Ziele bereitzustellen",
+                "privacy.modal.location.item2": "Nahegelegene Orte für die Reiseplanung vorzuschlagen",
+                "privacy.modal.location.details": "Standortdaten werden lokal verarbeitet und nur für Wetterdienste über Apple's WeatherKit verwendet. Sie können den Standortzugriff jederzeit in Ihren Geräteeinstellungen deaktivieren.",
+                "privacy.modal.storage.title": "DATENSPEICHERUNG",
+                "privacy.modal.storage.description": "Alle Ihre Reisedaten werden lokal auf Ihrem Gerät mit Apple's SwiftData Framework gespeichert. Wir sammeln, speichern oder übertragen Ihre persönlichen Informationen nicht an externe Server.",
+                "privacy.modal.thirdParty.title": "DRITTANBIETER-DIENSTE",
+                "privacy.modal.thirdParty.description": "PackAI verwendet Apple's WeatherKit-Service, um Wetterinformationen bereitzustellen. Wetteranfragen werden gemäß <a href=\"https://www.apple.com/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Apple's Datenschutzrichtlinien</a> behandelt.",
+                "privacy.modal.rights.title": "IHRE RECHTE",
+                "privacy.modal.rights.description": "Da alle Daten lokal auf Ihrem Gerät gespeichert werden, haben Sie vollständige Kontrolle über Ihre Informationen:",
+                "privacy.modal.rights.item1": "App löschen, um alle Daten zu entfernen",
+                "privacy.modal.rights.item2": "Standortberechtigungen in den Geräteeinstellungen verwalten",
+                "privacy.modal.rights.item3": "Ihre Daten nach Bedarf exportieren oder sichern",
+                "privacy.modal.contact.title": "KONTAKTIEREN SIE UNS",
+                "privacy.modal.contact.description": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, <a href=\"mailto:support@reyescasa.games\">kontaktieren Sie uns</a> bitte über die Support-Kanäle der App."
             },
             en: {
                 "nav.features": "Features",
@@ -682,7 +775,33 @@ footer {
                 "privacy.features.1.description": "No pack data collection",
                 "privacy.features.2.title": "On-Device",
                 "privacy.features.2.description": "Complete local processing",
-                "scroll": "Scroll"
+                "scroll": "Scroll",
+                "footer.privacy": "Privacy Policy",
+                "privacy.modal.title": "PackAI Privacy Policy",
+                "privacy.modal.lastUpdated": "Last Updated: August 4, 2025",
+                "privacy.modal.intro": "This Privacy Policy describes how PackAI handles your information when you use our mobile application.",
+                "privacy.modal.infoCollect.title": "INFORMATION WE COLLECT",
+                "privacy.modal.infoCollect.description": "PackAI stores all your data locally on your device:",
+                "privacy.modal.infoCollect.item1": "Trip information (names, dates, destinations)",
+                "privacy.modal.infoCollect.item2": "Packing lists and item details",
+                "privacy.modal.infoCollect.item3": "Categories and locations you create",
+                "privacy.modal.infoCollect.item4": "App preferences and settings",
+                "privacy.modal.location.title": "LOCATION DATA",
+                "privacy.modal.location.description": "With your permission, PackAI may access your location to:",
+                "privacy.modal.location.item1": "Provide weather information for your destinations",
+                "privacy.modal.location.item2": "Suggest nearby locations for trip planning",
+                "privacy.modal.location.details": "Location data is processed locally and used only for weather services through Apple's WeatherKit. You can disable location access in your device settings at any time.",
+                "privacy.modal.storage.title": "DATA STORAGE",
+                "privacy.modal.storage.description": "All your trip data is stored locally on your device using Apple's SwiftData framework. We do not collect, store, or transmit your personal information to external servers.",
+                "privacy.modal.thirdParty.title": "THIRD-PARTY SERVICES",
+                "privacy.modal.thirdParty.description": "PackAI uses Apple's WeatherKit service to provide weather information. Weather data requests are handled in accordance with <a href=\"https://www.apple.com/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Apple's privacy policies</a>.",
+                "privacy.modal.rights.title": "YOUR RIGHTS",
+                "privacy.modal.rights.description": "Since all data is stored locally on your device, you have complete control over your information:",
+                "privacy.modal.rights.item1": "Delete the app to remove all data",
+                "privacy.modal.rights.item2": "Manage location permissions in device settings",
+                "privacy.modal.rights.item3": "Export or backup your data as needed",
+                "privacy.modal.contact.title": "CONTACT US",
+                "privacy.modal.contact.description": "If you have any questions about this Privacy Policy, please <a href=\"mailto:support@reyescasa.games\">contact us</a> through the App's support channels."
             }
         };
 
@@ -726,17 +845,6 @@ footer {
             });
         }
 
-        function showImpressum() {
-            const modal = document.getElementById('impressum-modal');
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideImpressum() {
-            const modal = document.getElementById('impressum-modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const languageSelect = document.getElementById('languageSelect');
@@ -747,28 +855,6 @@ footer {
             const scrollIndicator = document.getElementById('scrollIndicator');
             scrollIndicator.addEventListener('click', scrollToFeatures);
 
-            const impressumLink = document.getElementById('impressumLink');
-            const modalClose = document.getElementById('modalClose');
-            const modal = document.getElementById('impressum-modal');
-
-            impressumLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                showImpressum();
-            });
-
-            modalClose.addEventListener('click', hideImpressum);
-
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    hideImpressum();
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    hideImpressum();
-                }
-            });
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -816,6 +902,34 @@ footer {
 
             document.querySelectorAll('.feature-card').forEach(card => {
                 observer.observe(card);
+            });
+
+            // Privacy Policy Modal functionality
+            const privacyPolicyLink = document.getElementById('privacyPolicyLink');
+            const privacyModal = document.getElementById('privacyModal');
+            const closePrivacy = document.getElementById('closePrivacy');
+
+            privacyPolicyLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                privacyModal.style.display = 'flex';
+            });
+
+            closePrivacy.addEventListener('click', function() {
+                privacyModal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            privacyModal.addEventListener('click', function(e) {
+                if (e.target === privacyModal) {
+                    privacyModal.style.display = 'none';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && privacyModal.style.display === 'flex') {
+                    privacyModal.style.display = 'none';
+                }
             });
         });
     </script>
