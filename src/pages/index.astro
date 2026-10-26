@@ -1,15 +1,60 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Hero from "../components/Hero.astro";
-import Main from "../components/Main.astro";
-import { SITE_TITLE } from "../config";
+// Startseite: Gratis Parken. Die anderen Apps haben eigene Seiten (/hoeher-kleiner, /packai).
+// Stil und Bilder liegen unter public/gratis-parken/.
 ---
 
-<PageLayout>
-  <PageMeta title={`${SITE_TITLE} | Web Ninja`} slot="meta" />
-  <Fragment slot="main">
-    <Hero/>
-    <Main />
-  </Fragment>
-</PageLayout>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gratis Parken</title>
+  <meta name="description" content="Gratis Parken zeigt dir, wo du in der Nähe deines Ziels kostenlos parken kannst, und bringt dich hin.">
+  <link rel="icon" href="/gratis-parken/icon.png">
+  <link rel="stylesheet" href="/gratis-parken/style.css">
+</head>
+<body>
+<main>
+  <header class="app">
+    <img src="/gratis-parken/icon.png" alt="App-Symbol von Gratis Parken">
+    <div>
+      <h1>Gratis Parken</h1>
+      <p class="subtitle">Kostenlos parken in deutschen Städten</p>
+    </div>
+  </header>
+
+  <p>Gib dein Ziel ein, und Gratis Parken zeigt dir die nächsten Straßen, in denen du im gewünschten Zeitraum
+    nichts bezahlst. Die App bringt dich mit Sprachansagen hin, in der App, mit Apple Karten oder über CarPlay.</p>
+
+  <div class="card">
+    <h3>Was die App kann</h3>
+    <ul>
+      <li>Gratis-Straßen rund um dein Ziel oder deinen Standort, mit Fußweg zum Ziel</li>
+      <li>Parkzeitraum wählen: Ankunft und Dauer, auch abends und am Wochenende</li>
+      <li>Alle Städte in Deutschland ab 20.000 Einwohnern; offizielle Parkzonen für Berlin, Hamburg, München, Köln und Frankfurt</li>
+      <li>Navigation mit Ansagen und Prüfung bei der Ankunft</li>
+      <li>Erinnerung, bevor das Gratis-Parken endet</li>
+      <li>Fehler melden: Hilf mit, die Daten aktuell zu halten</li>
+    </ul>
+  </div>
+
+  <p>Alle Angaben ohne Gewähr. Vor Ort gilt immer die Beschilderung.</p>
+
+  <nav class="links">
+    <a href="/gratis-parken/support.html">Support</a>
+    <a href="/gratis-parken/datenschutz.html">Datenschutz</a>
+  </nav>
+
+  <h2>Weitere Apps</h2>
+  <nav class="links">
+    <a href="/hoeher-kleiner">Höher Kleiner</a>
+    <a href="/packai">PackAI</a>
+  </nav>
+
+  <footer>
+    Straßendaten: © OpenStreetMap-Mitwirkende (ODbL) ·
+    <a href="/impressum">Impressum</a>
+  </footer>
+</main>
+</body>
+</html>
